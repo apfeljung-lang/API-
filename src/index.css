@@ -1,0 +1,230 @@
+@import url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'WantedSansVariable';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2611030107@font-variable-1269/variable-1269/WantedSansVariable.woff2') format('woff2');
+  font-weight: 400 1000;
+  font-display: swap;
+}
+
+/* Paperozi (Paperlogy) Font Faces (Weights 100 - 900) */
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Paperozi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-racing: 'Paperozi', 'WantedSansVariable', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-title: 'Paperozi', 'WantedSansVariable', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  html {
+    font-size: 18px;
+  }
+
+  html, body {
+    font-family: 'Paperozi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0b061c;
+    color: #f1f5f9;
+    overflow-x: hidden;
+    letter-spacing: -0.015em;
+    line-height: 1.6;
+  }
+
+  /* Title font definition (Paperozi & WantedSansVariable) */
+  h1, h2, h3, h4, h5, h6, .font-racing, .font-title {
+    font-family: 'Paperozi', 'WantedSansVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono, [data-tabular] {
+    font-family: 'JetBrains Mono', 'Paperozi', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Neon Glow & Speedline Effects matching the reference image */
+.speed-gradient {
+  background: radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.25) 0%, rgba(11, 6, 28, 0) 70%);
+}
+
+.racing-yellow {
+  color: #ffe600;
+  text-shadow: 0 0 20px rgba(255, 230, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.racing-white {
+  color: #ffffff;
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Racing Image Keyframes & Dynamic Effects */
+@keyframes kartDrive {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-4px) scale(1.006) rotate(0.12deg);
+  }
+  50% {
+    transform: translateY(-1px) scale(1.002) rotate(-0.08deg);
+  }
+  75% {
+    transform: translateY(-5px) scale(1.008) rotate(0.15deg);
+  }
+}
+
+@keyframes nitroSpeed {
+  0%, 100% {
+    transform: translateY(-3px) scale(1.015) rotate(0.2deg);
+  }
+  20% {
+    transform: translateY(-6px) scale(1.018) rotate(-0.25deg);
+  }
+  40% {
+    transform: translateY(-2px) scale(1.02) rotate(0.2deg);
+  }
+  60% {
+    transform: translateY(-7px) scale(1.022) rotate(-0.15deg);
+  }
+  80% {
+    transform: translateY(-4px) scale(1.017) rotate(0.25deg);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  40% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkFlash {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25) translateY(-3px);
+  }
+}
+
+@keyframes nitroPulse {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.35), 0 0 70px rgba(0, 242, 254, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 65px rgba(168, 85, 247, 0.65), 0 0 110px rgba(250, 204, 21, 0.35);
+  }
+}
+
+.animate-kart-idle {
+  animation: kartDrive 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-nitro-speed {
+  animation: nitroSpeed 0.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-light-sweep {
+  animation: lightSweep 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.animate-spark {
+  animation: sparkFlash 1.2s ease-in-out infinite;
+}
+
+.animate-nitro-pulse {
+  animation: nitroPulse 3s ease-in-out infinite;
+}
+
+/* Subtle scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0b061c;
+}
+::-webkit-scrollbar-thumb {
+  background: #231447;
+  border-radius: 3px;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "LS OPEN API TRADING WORLD",
+  "description": "LS증권 OPEN API 실전투자대회 - 부루마블형 3D 인터랙티브 게임 보드와 프리미엄 금융 대시보드가 결합된 실전투자대회 공식 플랫폼",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
