@@ -17,8 +17,8 @@ export const LSLogo: React.FC<LSLogoProps> = ({
       : size === 'lg'
       ? 'h-8 sm:h-9'
       : size === 'sm'
-      ? 'h-5 sm:h-5.5'
-      : 'h-7 sm:h-8';
+      ? 'h-5 sm:h-6'
+      : 'h-5 sm:h-7.5';
 
   return (
     <div className={`inline-flex items-center shrink-0 select-none ${className}`}>

@@ -41,8 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
           title="LS증권 OPEN API 실전투자대회 홈으로 이동"
         >
           {/* Top-left LS증권 Official White Logo */}
-          <LSLogo size="sm" className="sm:hidden group-hover:opacity-90 transition-opacity" />
-          <LSLogo size="md" className="hidden sm:inline-flex group-hover:opacity-90 transition-opacity" />
+          <LSLogo size="md" className="group-hover:opacity-90 transition-opacity" />
 
           <div className="flex items-center gap-1 sm:gap-2 font-racing italic font-black text-sm sm:text-2xl tracking-tight leading-none whitespace-nowrap">
             <span className="text-[#FFCC00] group-hover:text-yellow-300 transition-colors">

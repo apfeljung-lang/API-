@@ -86,22 +86,24 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
 
             {/* Quick action strip docked cleanly beneath artwork on mobile and integrated console on desktop */}
-            <div className="border-t border-purple-500/40 bg-[#0e0722]/98 backdrop-blur-md p-3.5 sm:p-4 flex flex-col md:flex-row items-center justify-between gap-3 shadow-2xl">
-              <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
-                <div className="flex items-center gap-2">
-                  <span className="relative flex h-2.5 w-2.5 shrink-0">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-                  </span>
-                  <div>
-                    <div className="text-xs font-bold text-white leading-tight flex items-center gap-1.5 whitespace-nowrap">
-                      <span>실시간 실거래 집계 중</span>
-                      <span className="text-[10px] px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300 border border-purple-500/40 font-mono">
-                        1,562명 참가
-                      </span>
-                    </div>
-                    <div className="text-[11px] text-slate-400 whitespace-nowrap">
-                      API 누적 거래액 1,911억원
+            <div className="border-t border-purple-500/40 bg-[#0e0722]/98 backdrop-blur-md p-3 sm:p-4 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3 shadow-2xl">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full lg:w-auto">
+                <div className="flex items-center justify-between sm:justify-start gap-2 bg-[#12082b]/90 sm:bg-transparent px-3 py-2 sm:p-0 rounded-xl border border-purple-900/40 sm:border-0">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2.5 w-2.5 shrink-0">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                    </span>
+                    <div>
+                      <div className="text-xs font-bold text-white leading-tight flex items-center gap-1.5 whitespace-nowrap">
+                        <span>실시간 실거래 집계 중</span>
+                        <span className="text-[10px] px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300 border border-purple-500/40 font-mono">
+                          1,562명 참가
+                        </span>
+                      </div>
+                      <div className="text-[11px] text-slate-400 whitespace-nowrap">
+                        API 누적 거래액 1,911억원
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -109,32 +111,32 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 {/* Real-time Speedometer & Nitro Boost Interactive Button */}
                 <button
                   onClick={handleTriggerBoost}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-racing transition-all cursor-pointer shrink-0 ${
+                  className={`flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 rounded-xl border text-xs font-racing transition-all cursor-pointer w-full sm:w-auto shrink-0 ${
                     isBoosting 
                       ? 'bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 text-white border-cyan-400 shadow-[0_0_20px_rgba(0,242,254,0.6)] animate-pulse'
-                      : 'bg-purple-950/60 hover:bg-purple-900/80 text-yellow-300 border-yellow-500/40 hover:border-yellow-400'
+                      : 'bg-purple-950/70 hover:bg-purple-900/80 text-yellow-300 border-yellow-500/40 hover:border-yellow-400'
                   }`}
                   title="클릭하여 부스터 가동!"
                 >
                   <Flame size={14} className={isBoosting ? 'animate-bounce text-yellow-300' : 'text-yellow-400'} />
-                  <span>{isBoosting ? 'BOOST MAX!' : '⚡ 부스터 가동'}</span>
-                  <span className="font-mono text-[11px] px-1.5 py-0.5 rounded bg-black/40 text-emerald-400 font-bold tabular-nums">
+                  <span className="whitespace-nowrap">{isBoosting ? 'BOOST MAX!' : '⚡ 부스터 가동'}</span>
+                  <span className="font-mono text-[11px] px-1.5 py-0.5 rounded bg-black/40 text-emerald-400 font-bold tabular-nums whitespace-nowrap">
                     {speed} km/h
                   </span>
                 </button>
               </div>
 
-              <div className="flex items-center gap-2 w-full md:w-auto">
+              <div className="flex items-center gap-2 w-full lg:w-auto">
                 <button
                   onClick={onOpenRegister}
-                  className="flex-1 md:flex-none px-4 py-2.5 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-300 text-slate-950 font-racing font-extrabold text-xs sm:text-sm rounded-xl shadow-lg shadow-yellow-500/25 transition-all transform active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1.5"
+                  className="flex-1 lg:flex-none px-4 py-2.5 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-300 text-slate-950 font-racing font-extrabold text-xs sm:text-sm rounded-xl shadow-lg shadow-yellow-500/25 transition-all transform active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1.5"
                 >
                   <Flag size={14} />
                   <span>대회 참가 신청</span>
                 </button>
                 <button
                   onClick={() => onNavigate('dashboard')}
-                  className="flex-1 md:flex-none px-4 py-2.5 bg-purple-950/80 hover:bg-purple-900 border border-purple-500/50 text-white font-bold text-xs sm:text-sm rounded-xl transition-colors cursor-pointer whitespace-nowrap text-center"
+                  className="flex-1 lg:flex-none px-4 py-2.5 bg-purple-950/80 hover:bg-purple-900 border border-purple-500/50 text-white font-bold text-xs sm:text-sm rounded-xl transition-colors cursor-pointer whitespace-nowrap text-center"
                 >
                   내 대시보드
                 </button>
@@ -241,20 +243,22 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
 
         {/* 4 Awards & Strategy Program Quick Banner */}
-        <div className="max-w-4xl mx-auto p-6 rounded-2xl bg-[#0e0826] border border-purple-800/80 flex flex-col md:flex-row items-center justify-between gap-5 shadow-xl">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-yellow-400/20 border border-yellow-400/40 text-yellow-400 flex items-center justify-center shrink-0">
-              <Trophy size={24} />
+        <div className="max-w-4xl mx-auto p-4 sm:p-6 rounded-3xl bg-[#0e0826] border border-purple-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-5 shadow-xl overflow-hidden">
+          <div className="flex items-start gap-3 sm:gap-4 w-full min-w-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-yellow-400/20 border border-yellow-400/40 text-yellow-400 flex items-center justify-center shrink-0 mt-0.5">
+              <Trophy className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                 <span className="text-xs font-racing uppercase tracking-wider text-yellow-400 font-bold whitespace-nowrap">
                   총 12명 / 1,850만원 예산
                 </span>
-                <span className="text-xs text-slate-400">·</span>
-                <span className="text-xs text-cyan-300 font-mono whitespace-nowrap">전략 우수사례 별도 운영</span>
+                <span className="text-xs text-slate-500 hidden sm:inline">·</span>
+                <span className="text-xs text-cyan-300 font-mono whitespace-nowrap">
+                  전략 우수사례 별도 운영
+                </span>
               </div>
-              <h4 className="text-base sm:text-lg font-racing text-white font-bold mt-0.5 break-keep-all">
+              <h4 className="text-base sm:text-lg font-racing text-white font-bold mt-1 break-keep-all leading-snug">
                 수익금 실전투자대회 4대 시상 & OPEN API 전략 우수사례
               </h4>
               <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed break-keep-all">
@@ -263,7 +267,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0 w-full md:w-auto">
+          <div className="flex items-center gap-2 shrink-0 w-full md:w-auto pt-1 md:pt-0">
             <button
               onClick={() => onNavigate('report')}
               className="flex-1 md:flex-none px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-bold rounded-xl transition-colors cursor-pointer whitespace-nowrap flex items-center justify-center gap-1"
