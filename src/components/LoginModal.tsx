@@ -69,7 +69,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-md bg-gradient-to-b from-[#150a32] to-[#0c061e] border-2 border-purple-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-100 overflow-hidden">
+      <div className="relative w-full max-w-md max-h-[92vh] overflow-y-auto scrollbar-none bg-gradient-to-b from-[#150a32] to-[#0c061e] border-2 border-purple-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-100">
         {/* Background glow */}
         <div className="absolute top-0 right-0 w-48 h-48 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-600/15 rounded-full blur-3xl pointer-events-none" />

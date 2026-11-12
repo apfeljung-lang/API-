@@ -32,17 +32,19 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-purple-900/60 bg-[#0c061e]/95 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between gap-4">
+      {/* Top Main Bar */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 h-15 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand wordmark matching the attached image LS증권 logo */}
         <button
           onClick={() => setActiveTab('home')}
-          className="shrink-0 flex items-center gap-3 sm:gap-3.5 cursor-pointer text-left group"
+          className="shrink-0 flex items-center gap-2 sm:gap-3.5 cursor-pointer text-left group"
           title="LS증권 OPEN API 실전투자대회 홈으로 이동"
         >
           {/* Top-left LS증권 Official White Logo */}
-          <LSLogo size="md" className="group-hover:opacity-90 transition-opacity" />
+          <LSLogo size="sm" className="sm:hidden group-hover:opacity-90 transition-opacity" />
+          <LSLogo size="md" className="hidden sm:inline-flex group-hover:opacity-90 transition-opacity" />
 
-          <div className="flex items-center gap-1.5 sm:gap-2 font-racing italic font-black text-xl sm:text-2xl tracking-tight leading-none">
+          <div className="flex items-center gap-1 sm:gap-2 font-racing italic font-black text-sm sm:text-2xl tracking-tight leading-none whitespace-nowrap">
             <span className="text-[#FFCC00] group-hover:text-yellow-300 transition-colors">
               OPEN API
             </span>
@@ -52,8 +54,8 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </button>
 
-        {/* 7 Menu Items Navigation */}
-        <nav className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto py-1 scrollbar-none">
+        {/* Desktop 8 Menu Items Navigation */}
+        <nav className="hidden md:flex items-center gap-1.5 sm:gap-2 overflow-x-auto py-1 scrollbar-none">
           {navItems.map((item) => {
             const isActive = activeTab === item.key;
 
@@ -76,15 +78,15 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Action Button: Changed to 로그인 */}
         <div className="flex items-center gap-2 shrink-0">
           {currentUser ? (
-            <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-purple-950/70 border border-yellow-400/40 text-xs sm:text-sm font-bold text-yellow-300">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-purple-950/70 border border-yellow-400/40 text-xs sm:text-sm font-bold text-yellow-300">
                 <User className="w-3.5 h-3.5 text-yellow-400" />
-                <span>{currentUser.name} 님</span>
+                <span className="whitespace-nowrap">{currentUser.name} 님</span>
               </div>
               <button
                 onClick={onLogout}
                 title="로그아웃"
-                className="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors flex items-center gap-1 cursor-pointer"
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap"
               >
                 <LogOut className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">로그아웃</span>
@@ -93,13 +95,34 @@ export const Header: React.FC<HeaderProps> = ({
           ) : (
             <button
               onClick={onOpenLogin}
-              className="px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base font-racing text-slate-950 bg-yellow-400 hover:bg-yellow-300 font-extrabold rounded-xl shadow-md shadow-yellow-400/25 transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5"
+              className="px-3 sm:px-5 py-1.5 sm:py-2.5 text-xs sm:text-base font-racing text-slate-950 bg-yellow-400 hover:bg-yellow-300 font-extrabold rounded-xl shadow-md shadow-yellow-400/25 transition-all cursor-pointer whitespace-nowrap flex items-center gap-1 sm:gap-1.5"
             >
-              <User className="w-4 h-4" />
+              <User className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
               <span>로그인</span>
             </button>
           )}
         </div>
+      </div>
+
+      {/* Mobile-only Horizontal Scrollable Menu Tab Bar */}
+      <div className="md:hidden border-t border-purple-900/50 bg-[#090417] px-2 py-1.5 overflow-x-auto scrollbar-none flex items-center gap-1">
+        {navItems.map((item) => {
+          const isActive = activeTab === item.key;
+
+          return (
+            <button
+              key={item.key}
+              onClick={() => setActiveTab(item.key)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                isActive
+                  ? 'bg-gradient-to-r from-yellow-400 to-amber-400 text-slate-950 font-black shadow-sm'
+                  : 'text-slate-300 hover:text-white hover:bg-purple-950/60'
+              }`}
+            >
+              {item.label}
+            </button>
+          );
+        })}
       </div>
     </header>
   );

@@ -138,14 +138,14 @@ export const DashboardView: React.FC = () => {
             const isToday = idx === pnlHistory.length - 1;
 
             return (
-              <div key={item.day} className="flex items-center gap-3.5 text-sm">
-                <span className={`w-24 font-semibold shrink-0 text-xs sm:text-sm ${isToday ? 'text-yellow-400 font-bold' : 'text-slate-300'}`}>
+              <div key={item.day} className="flex items-center gap-2 sm:gap-3.5 text-sm">
+                <span className={`w-18 sm:w-24 font-semibold shrink-0 text-xs sm:text-sm whitespace-nowrap ${isToday ? 'text-yellow-400 font-bold' : 'text-slate-300'}`}>
                   {item.day}
                 </span>
-                <div className="flex-1 h-8 bg-slate-950/80 rounded-lg overflow-hidden p-0.5 flex items-center">
+                <div className="flex-1 h-8 bg-slate-950/80 rounded-lg overflow-hidden p-0.5 flex items-center min-w-0">
                   <div
                     style={{ width: `${barWidth}%` }}
-                    className={`h-full rounded-md transition-all duration-300 flex items-center justify-end pr-2.5 text-xs sm:text-sm font-mono font-bold ${
+                    className={`h-full rounded-md transition-all duration-300 flex items-center justify-end pr-1.5 sm:pr-2.5 text-[11px] sm:text-sm font-mono font-bold whitespace-nowrap ${
                       isToday
                         ? 'bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-400 text-slate-950'
                         : 'bg-slate-700/80 text-slate-200'
@@ -154,7 +154,7 @@ export const DashboardView: React.FC = () => {
                     +{item.pnl.toLocaleString()}원
                   </div>
                 </div>
-                <span className="w-24 text-right font-mono text-xs text-slate-400 tabular-nums shrink-0">
+                <span className="w-20 sm:w-24 text-right font-mono text-[11px] sm:text-xs text-slate-400 tabular-nums shrink-0 whitespace-nowrap">
                   {item.daily}
                 </span>
               </div>

@@ -71,44 +71,44 @@ export const RankingView: React.FC = () => {
 
       {/* 3 League Tabs & Search Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-purple-900/60 pb-4">
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none w-full sm:w-auto">
           <button
             onClick={() => setSelectedLeague('rookie')}
-            className={`px-4 py-2.5 rounded-xl text-sm sm:text-base font-racing transition-colors cursor-pointer flex items-center gap-2 ${
+            className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-base font-racing transition-colors cursor-pointer flex items-center gap-1.5 sm:gap-2 shrink-0 ${
               selectedLeague === 'rookie'
                 ? 'bg-sky-500/20 text-sky-400 border border-sky-500/50 shadow-sm font-bold'
                 : 'text-slate-400 hover:text-slate-200 bg-slate-900/60'
             }`}
           >
-            <Zap size={16} />
-            <span>루키 리그</span>
-            <span className="text-[11px] font-mono text-slate-400">100만~1,000만</span>
+            <Zap size={15} />
+            <span className="whitespace-nowrap">루키 리그</span>
+            <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 whitespace-nowrap">100만~1,000만</span>
           </button>
 
           <button
             onClick={() => setSelectedLeague('challenger')}
-            className={`px-4 py-2.5 rounded-xl text-sm sm:text-base font-racing transition-colors cursor-pointer flex items-center gap-2 ${
+            className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-base font-racing transition-colors cursor-pointer flex items-center gap-1.5 sm:gap-2 shrink-0 ${
               selectedLeague === 'challenger'
                 ? 'bg-purple-500/20 text-purple-300 border border-purple-500/50 shadow-sm font-bold'
                 : 'text-slate-400 hover:text-slate-200 bg-slate-900/60'
             }`}
           >
-            <Shield size={16} />
-            <span>챌린저 리그</span>
-            <span className="text-[11px] font-mono text-purple-300">1,000만~5,000만</span>
+            <Shield size={15} />
+            <span className="whitespace-nowrap">챌린저 리그</span>
+            <span className="text-[10px] sm:text-[11px] font-mono text-purple-300 whitespace-nowrap">1,000만~5,000만</span>
           </button>
 
           <button
             onClick={() => setSelectedLeague('master')}
-            className={`px-4 py-2.5 rounded-xl text-sm sm:text-base font-racing transition-colors cursor-pointer flex items-center gap-2 ${
+            className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-base font-racing transition-colors cursor-pointer flex items-center gap-1.5 sm:gap-2 shrink-0 ${
               selectedLeague === 'master'
                 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50 shadow-sm font-bold'
                 : 'text-slate-400 hover:text-slate-200 bg-slate-900/60'
             }`}
           >
-            <Crown size={16} />
-            <span>마스터 리그</span>
-            <span className="text-[11px] font-mono text-amber-300">5,000만 이상</span>
+            <Crown size={15} />
+            <span className="whitespace-nowrap">마스터 리그</span>
+            <span className="text-[10px] sm:text-[11px] font-mono text-amber-300 whitespace-nowrap">5,000만 이상</span>
           </button>
         </div>
 

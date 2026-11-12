@@ -56,7 +56,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-xl bg-gradient-to-b from-[#13092b] to-[#0c061e] border-2 border-yellow-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-100 overflow-hidden">
+      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto scrollbar-none bg-gradient-to-b from-[#13092b] to-[#0c061e] border-2 border-yellow-500/40 rounded-3xl p-5 sm:p-8 shadow-2xl text-slate-100">
         {/* Close Button */}
         <button
           onClick={onClose}
