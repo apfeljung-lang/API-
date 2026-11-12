@@ -50,8 +50,8 @@ export const LeagueParticipationView: React.FC<LeagueParticipationViewProps> = (
         <h2 className="text-2xl sm:text-3xl font-racing font-bold text-white tracking-tight">
           리그 참가신청 및 계좌 등록
         </h2>
-        <p className="text-sm sm:text-base text-slate-300 mt-1">
-          예탁 자산 규모에 따라 3개 리그 중 하나로 자동 확정 배정되며, <strong>누적 순수익금(원)</strong>만으로 순위를 평가합니다.
+        <p className="text-sm sm:text-base text-slate-300 mt-1 break-keep-all leading-relaxed">
+          예탁 자산 규모에 따라 3개 리그 중 하나로 자동 확정 배정되며, <strong className="text-yellow-400">누적 순수익금(원)</strong>만으로 순위를 평가합니다.
         </p>
       </div>
 
@@ -73,13 +73,19 @@ export const LeagueParticipationView: React.FC<LeagueParticipationViewProps> = (
               시상 300만원
             </span>
           </div>
-          <h3 className="text-lg sm:text-xl font-racing text-white whitespace-nowrap">루키 리그</h3>
-          <p className="text-sm text-sky-400 font-bold mt-1 whitespace-nowrap">100만원 이상 ~ 1,000만원 미만</p>
-          <p className="text-sm text-slate-300 mt-2.5 leading-relaxed">
+          <h3 className="text-lg sm:text-xl font-racing text-white">루키 리그</h3>
+          <p className="text-sm text-sky-400 font-bold mt-1 break-keep-all">
+            <span className="inline-block whitespace-nowrap">100만원 이상</span> ~ <span className="inline-block whitespace-nowrap">1,000만원 미만</span>
+          </p>
+          <p className="text-sm text-slate-300 mt-2.5 leading-relaxed break-keep-all">
             소액 자본으로 참여하는 신예 퀀트 리그 (누적 순수익금 1~3위 시상)
           </p>
-          <div className="mt-5 pt-3.5 border-t border-slate-800/80 text-xs sm:text-sm text-slate-400 font-medium whitespace-nowrap">
-            1위: 150만원 · 2위: 100만원 · 3위: 50만원
+          <div className="mt-5 pt-3.5 border-t border-slate-800/80 text-xs sm:text-sm text-slate-400 font-medium flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="whitespace-nowrap">1위: 150만원</span>
+            <span className="text-slate-600">·</span>
+            <span className="whitespace-nowrap">2위: 100만원</span>
+            <span className="text-slate-600">·</span>
+            <span className="whitespace-nowrap">3위: 50만원</span>
           </div>
         </div>
 
@@ -100,17 +106,23 @@ export const LeagueParticipationView: React.FC<LeagueParticipationViewProps> = (
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <h3 className="text-lg sm:text-xl font-racing text-white whitespace-nowrap">챌린저 리그</h3>
+            <h3 className="text-lg sm:text-xl font-racing text-white">챌린저 리그</h3>
             <span className="text-xs font-racing text-yellow-300 bg-yellow-400/20 px-2.5 py-0.5 rounded-full font-bold whitespace-nowrap">
               추천 배정
             </span>
           </div>
-          <p className="text-sm text-purple-400 font-bold mt-1 whitespace-nowrap">1,000만원 이상 ~ 5,000만원 미만</p>
-          <p className="text-sm text-slate-300 mt-2.5 leading-relaxed">
+          <p className="text-sm text-purple-400 font-bold mt-1 break-keep-all">
+            <span className="inline-block whitespace-nowrap">1,000만원 이상</span> ~ <span className="inline-block whitespace-nowrap">5,000만원 미만</span>
+          </p>
+          <p className="text-sm text-slate-300 mt-2.5 leading-relaxed break-keep-all">
             일반 투자자 활성화 주력 리그 (누적 순수익금 1~3위 시상)
           </p>
-          <div className="mt-5 pt-3.5 border-t border-slate-800/80 text-xs sm:text-sm text-slate-400 font-medium whitespace-nowrap">
-            1위: 250만원 · 2위: 130만원 · 3위: 70만원
+          <div className="mt-5 pt-3.5 border-t border-slate-800/80 text-xs sm:text-sm text-slate-400 font-medium flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="whitespace-nowrap">1위: 250만원</span>
+            <span className="text-slate-600">·</span>
+            <span className="whitespace-nowrap">2위: 130만원</span>
+            <span className="text-slate-600">·</span>
+            <span className="whitespace-nowrap">3위: 70만원</span>
           </div>
         </div>
 
@@ -130,13 +142,19 @@ export const LeagueParticipationView: React.FC<LeagueParticipationViewProps> = (
               시상 650만원
             </span>
           </div>
-          <h3 className="text-lg sm:text-xl font-racing text-white whitespace-nowrap">마스터 리그</h3>
-          <p className="text-sm text-amber-400 font-bold mt-1 whitespace-nowrap">5,000만원 이상</p>
-          <p className="text-sm text-slate-300 mt-2.5 leading-relaxed">
+          <h3 className="text-lg sm:text-xl font-racing text-white">마스터 리그</h3>
+          <p className="text-sm text-amber-400 font-bold mt-1 break-keep-all">
+            <span className="inline-block whitespace-nowrap">5,000만원 이상</span>
+          </p>
+          <p className="text-sm text-slate-300 mt-2.5 leading-relaxed break-keep-all">
             고액 자산 운용 및 고액 투자자 참여 리그 (누적 순수익금 1~3위 시상)
           </p>
-          <div className="mt-5 pt-3.5 border-t border-slate-800/80 text-xs sm:text-sm text-slate-400 font-medium whitespace-nowrap">
-            1위: 350만원 · 2위: 200만원 · 3위: 100만원
+          <div className="mt-5 pt-3.5 border-t border-slate-800/80 text-xs sm:text-sm text-slate-400 font-medium flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="whitespace-nowrap">1위: 350만원</span>
+            <span className="text-slate-600">·</span>
+            <span className="whitespace-nowrap">2위: 200만원</span>
+            <span className="text-slate-600">·</span>
+            <span className="whitespace-nowrap">3위: 100만원</span>
           </div>
         </div>
       </div>

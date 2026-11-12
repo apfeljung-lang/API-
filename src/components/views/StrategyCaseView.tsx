@@ -177,7 +177,7 @@ export const StrategyCaseView: React.FC = () => {
           {STRATEGY_CASE_CRITERIA.map((criterion, idx) => (
             <div
               key={criterion.category}
-              className="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 transition-all flex flex-col justify-between"
+              className="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 transition-all flex flex-col justify-between overflow-hidden"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
@@ -188,13 +188,13 @@ export const StrategyCaseView: React.FC = () => {
                     {criterion.points}점
                   </span>
                 </div>
-                <h4 className="text-sm sm:text-base font-racing text-white mb-1.5 font-bold whitespace-nowrap">
+                <h4 className="text-sm sm:text-base font-racing text-white mb-1.5 font-bold break-keep-all">
                   {criterion.category}
                 </h4>
-                <div className="text-xs font-semibold text-cyan-300 mb-2">
+                <div className="text-xs font-semibold text-cyan-300 mb-2 break-keep-all leading-snug">
                   {criterion.title}
                 </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-400 leading-relaxed break-keep-all">
                   {criterion.description}
                 </p>
               </div>

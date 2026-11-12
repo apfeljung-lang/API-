@@ -133,7 +133,7 @@ export const RankingView: React.FC = () => {
           return (
             <div
               key={item.maskedId}
-              className={`p-5 rounded-2xl border backdrop-blur-sm ${
+              className={`p-5 rounded-2xl border backdrop-blur-sm overflow-hidden ${
                 isGold
                   ? 'bg-gradient-to-b from-yellow-500/20 to-amber-500/5 border-yellow-500/50 shadow-md shadow-yellow-500/10'
                   : isSilver
@@ -147,8 +147,8 @@ export const RankingView: React.FC = () => {
                 </span>
                 <span className="text-xs font-mono text-slate-400 whitespace-nowrap">{item.maskedId}</span>
               </div>
-              <div className="flex items-center justify-between mb-2">
-                <div className="text-base sm:text-lg font-racing text-white font-bold whitespace-nowrap">{item.nickname}</div>
+              <div className="flex items-center justify-between mb-2 gap-2">
+                <div className="text-base sm:text-lg font-racing text-white font-bold truncate">{item.nickname}</div>
                 {item.isNewApi && (
                   <span className="text-[10px] font-bold text-sky-300 bg-sky-500/20 px-2 py-0.5 rounded border border-sky-500/40 whitespace-nowrap shrink-0">
                     신규 API

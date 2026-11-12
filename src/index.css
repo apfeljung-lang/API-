@@ -92,6 +92,8 @@
     overflow-x: hidden;
     letter-spacing: -0.015em;
     line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   /* Title font definition (Paperozi & WantedSansVariable) */

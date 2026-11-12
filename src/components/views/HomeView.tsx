@@ -175,15 +175,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
                 <span className="text-xs font-mono font-medium text-slate-300 whitespace-nowrap">시상 예산 300만원</span>
               </div>
-              <h4 className="text-lg sm:text-xl font-racing text-white group-hover:text-sky-300 transition-colors whitespace-nowrap">
+              <h4 className="text-lg sm:text-xl font-racing text-white group-hover:text-sky-300 transition-colors">
                 루키 리그
               </h4>
-              <p className="text-sm text-sky-400 font-bold mt-1 whitespace-nowrap">100만원 이상 ~ 1,000만원 미만</p>
-              <p className="text-sm text-slate-300 mt-2.5 leading-relaxed">
+              <p className="text-sm text-sky-400 font-bold mt-1 break-keep-all">
+                <span className="inline-block whitespace-nowrap">100만원 이상</span> ~ <span className="inline-block whitespace-nowrap">1,000만원 미만</span>
+              </p>
+              <p className="text-sm text-slate-300 mt-2.5 leading-relaxed break-keep-all">
                 소액 투자자 참여 확대 및 신예 퀀트들의 진검승부
               </p>
-              <div className="mt-5 pt-3.5 border-t border-slate-800 text-sm font-mono font-bold text-emerald-400 whitespace-nowrap">
-                1위: +142만원 (누적순익)
+              <div className="mt-5 pt-3.5 border-t border-slate-800 text-sm font-mono font-bold text-emerald-400">
+                <span className="inline-block whitespace-nowrap">1위: +142만원</span> <span className="inline-block whitespace-nowrap">(누적순익)</span>
               </div>
             </div>
 
@@ -201,15 +203,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
                 <span className="text-xs font-mono font-medium text-slate-300 whitespace-nowrap">시상 예산 450만원</span>
               </div>
-              <h4 className="text-lg sm:text-xl font-racing text-white group-hover:text-purple-300 transition-colors whitespace-nowrap">
+              <h4 className="text-lg sm:text-xl font-racing text-white group-hover:text-purple-300 transition-colors">
                 챌린저 리그
               </h4>
-              <p className="text-sm text-purple-400 font-bold mt-1 whitespace-nowrap">1,000만원 이상 ~ 5,000만원 미만</p>
-              <p className="text-sm text-slate-300 mt-2.5 leading-relaxed">
+              <p className="text-sm text-purple-400 font-bold mt-1 break-keep-all">
+                <span className="inline-block whitespace-nowrap">1,000만원 이상</span> ~ <span className="inline-block whitespace-nowrap">5,000만원 미만</span>
+              </p>
+              <p className="text-sm text-slate-300 mt-2.5 leading-relaxed break-keep-all">
                 일반 투자자 활성화 및 알고리즘 분산투자의 메인 리그
               </p>
-              <div className="mt-5 pt-3.5 border-t border-slate-800 text-sm font-mono font-bold text-emerald-400 whitespace-nowrap">
-                내 순위: 12위 (+124.5만원)
+              <div className="mt-5 pt-3.5 border-t border-slate-800 text-sm font-mono font-bold text-emerald-400">
+                <span className="inline-block whitespace-nowrap">내 순위: 12위</span> <span className="inline-block whitespace-nowrap">(+124.5만원)</span>
               </div>
             </div>
 
@@ -224,15 +228,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
                 <span className="text-xs font-mono font-medium text-slate-300 whitespace-nowrap">시상 예산 650만원</span>
               </div>
-              <h4 className="text-lg sm:text-xl font-racing text-white group-hover:text-amber-300 transition-colors whitespace-nowrap">
+              <h4 className="text-lg sm:text-xl font-racing text-white group-hover:text-amber-300 transition-colors">
                 마스터 리그
               </h4>
-              <p className="text-sm text-amber-400 font-bold mt-1 whitespace-nowrap">5,000만원 이상</p>
-              <p className="text-sm text-slate-300 mt-2.5 leading-relaxed">
+              <p className="text-sm text-amber-400 font-bold mt-1 break-keep-all">
+                <span className="inline-block whitespace-nowrap">5,000만원 이상</span>
+              </p>
+              <p className="text-sm text-slate-300 mt-2.5 leading-relaxed break-keep-all">
                 고액 자산 운용 및 고액 투자자 참여 포뮬러
               </p>
-              <div className="mt-5 pt-3.5 border-t border-slate-800 text-sm font-mono font-bold text-emerald-400 whitespace-nowrap">
-                1위: +1,845만원 (누적순익)
+              <div className="mt-5 pt-3.5 border-t border-slate-800 text-sm font-mono font-bold text-emerald-400">
+                <span className="inline-block whitespace-nowrap">1위: +1,845만원</span> <span className="inline-block whitespace-nowrap">(누적순익)</span>
               </div>
             </div>
           </div>
@@ -246,16 +252,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-racing uppercase tracking-wider text-yellow-400 font-bold">
+                <span className="text-xs font-racing uppercase tracking-wider text-yellow-400 font-bold whitespace-nowrap">
                   총 12명 / 1,850만원 예산
                 </span>
                 <span className="text-xs text-slate-400">·</span>
-                <span className="text-xs text-cyan-300 font-mono">전략 우수사례 별도 운영</span>
+                <span className="text-xs text-cyan-300 font-mono whitespace-nowrap">전략 우수사례 별도 운영</span>
               </div>
-              <h4 className="text-base sm:text-lg font-racing text-white font-bold mt-0.5">
+              <h4 className="text-base sm:text-lg font-racing text-white font-bold mt-0.5 break-keep-all">
                 수익금 실전투자대회 4대 시상 & OPEN API 전략 우수사례
               </h4>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed break-keep-all">
                 수익금 챔피언(9명), 꾸준한 수익(1명), 루키 스타(1명), 후반 역전(1명) 및 전략 우수사례(100점 정량심사)
               </p>
             </div>

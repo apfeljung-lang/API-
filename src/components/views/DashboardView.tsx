@@ -31,8 +31,10 @@ export const DashboardView: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-racing font-bold text-white tracking-tight">
             Dashboard
           </h2>
-          <p className="text-sm sm:text-base text-slate-300 mt-1">
-            수익률 평가 제외 · 오직 원화 누적 순수익금(원)과 주간별 실현손익을 실시간 확인합니다.
+          <p className="text-sm sm:text-base text-slate-300 mt-1 break-keep-all leading-relaxed">
+            <span className="inline-block">수익률 평가 제외 ·</span>{' '}
+            <span className="inline-block">오직 원화 누적 순수익금(원)과</span>{' '}
+            <span className="inline-block">주간별 실현손익을 실시간 확인합니다.</span>
           </p>
         </div>
       </div>
@@ -40,65 +42,77 @@ export const DashboardView: React.FC = () => {
       {/* 4 Core KPI Cards - Centered entirely on KRW profits */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {/* League & Rank */}
-        <div className="bg-gradient-to-b from-[#13092b] to-[#0c061e] border border-purple-500/40 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between text-sm text-slate-300 font-semibold mb-2">
-            <span className="whitespace-nowrap">클래스 & 순위</span>
-            <span className="px-2.5 py-0.5 rounded text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/50 whitespace-nowrap">
-              챌린저 리그
-            </span>
+        <div className="bg-gradient-to-b from-[#13092b] to-[#0c061e] border border-purple-500/40 rounded-2xl p-5 shadow-lg flex flex-col justify-between overflow-hidden">
+          <div>
+            <div className="flex items-center justify-between text-sm text-slate-300 font-semibold mb-2">
+              <span className="whitespace-nowrap">클래스 & 순위</span>
+              <span className="px-2.5 py-0.5 rounded text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/50 whitespace-nowrap">
+                챌린저 리그
+              </span>
+            </div>
+            <div className="flex items-baseline text-2xl sm:text-2xl xl:text-3xl font-racing text-white font-black tracking-tight whitespace-nowrap">
+              <span>12</span>
+              <span className="text-base sm:text-lg font-normal text-slate-400 ml-0.5 whitespace-nowrap">위</span>
+            </div>
           </div>
-          <div className="flex items-baseline whitespace-nowrap text-2xl sm:text-3xl xl:text-4xl font-racing text-white font-black tracking-tight">
-            <span>12</span>
-            <span className="text-base font-normal text-slate-400 ml-1 shrink-0">위</span>
-          </div>
-          <div className="flex items-center gap-1 text-sm font-bold text-emerald-400 mt-2 font-mono whitespace-nowrap">
+          <div className="flex items-center gap-1 text-sm font-bold text-emerald-400 mt-2 font-mono break-keep-all leading-relaxed">
             <ArrowUpRight size={16} className="shrink-0" />
-            <span>▲ 3위 추월 (상위 2.3%)</span>
+            <span className="inline-block whitespace-nowrap">▲ 3위 추월</span>{' '}
+            <span className="inline-block whitespace-nowrap">(상위 2.3%)</span>
           </div>
         </div>
 
         {/* Net Profit - Main Evaluation Metric */}
-        <div className="bg-gradient-to-b from-[#13092b] to-[#0c061e] border-2 border-yellow-500/50 rounded-2xl p-5 shadow-xl">
-          <div className="flex items-center justify-between text-sm text-slate-300 font-semibold mb-2">
-            <span className="text-yellow-400 font-bold whitespace-nowrap">누적 순수익금 (메인)</span>
-            <span className="text-[11px] text-slate-400 font-mono whitespace-nowrap">제비용 차감</span>
+        <div className="bg-gradient-to-b from-[#13092b] to-[#0c061e] border-2 border-yellow-500/50 rounded-2xl p-5 shadow-xl flex flex-col justify-between overflow-hidden">
+          <div>
+            <div className="flex items-center justify-between text-sm text-slate-300 font-semibold mb-2">
+              <span className="text-yellow-400 font-bold whitespace-nowrap">누적 순수익금 (메인)</span>
+              <span className="text-[11px] text-slate-400 font-mono whitespace-nowrap">제비용 차감</span>
+            </div>
+            <div className="flex items-baseline text-2xl sm:text-2xl xl:text-3xl font-racing text-yellow-400 tracking-tight tabular-nums font-black whitespace-nowrap">
+              <span>+{netProfit.toLocaleString()}</span>
+              <span className="text-base sm:text-lg font-bold text-yellow-400 ml-0.5 whitespace-nowrap">원</span>
+            </div>
           </div>
-          <div className="flex items-baseline whitespace-nowrap text-2xl sm:text-3xl xl:text-4xl font-racing text-yellow-400 tracking-tight tabular-nums font-black">
-            <span>+{netProfit.toLocaleString()}</span>
-            <span className="text-base font-normal text-yellow-500/80 ml-1 shrink-0">원</span>
-          </div>
-          <div className="text-xs text-slate-300 mt-2 whitespace-nowrap">
-            종료자산 - 시작자산 - 순외부유입
+          <div className="text-xs text-slate-400 mt-2 break-keep-all leading-relaxed">
+            <span className="inline-block whitespace-nowrap">종료자산 - 시작자산</span>{' '}
+            <span className="inline-block whitespace-nowrap">- 순외부유입</span>
           </div>
         </div>
 
         {/* Consistency - Min Weekly Profit */}
-        <div className="bg-gradient-to-b from-[#13092b] to-[#0c061e] border border-purple-500/40 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between text-sm text-slate-300 font-semibold mb-2">
-            <span className="whitespace-nowrap">최저 주간 순수익금</span>
-            <span className="text-xs text-emerald-400 font-bold whitespace-nowrap">4주 올플러스</span>
+        <div className="bg-gradient-to-b from-[#13092b] to-[#0c061e] border border-purple-500/40 rounded-2xl p-5 shadow-lg flex flex-col justify-between overflow-hidden">
+          <div>
+            <div className="flex items-center justify-between text-sm text-slate-300 font-semibold mb-2">
+              <span className="whitespace-nowrap">최저 주간 순수익금</span>
+              <span className="text-xs text-emerald-400 font-bold whitespace-nowrap">4주 올플러스</span>
+            </div>
+            <div className="flex items-baseline text-2xl sm:text-2xl xl:text-3xl font-racing text-emerald-400 tracking-tight tabular-nums font-black whitespace-nowrap">
+              <span>+{minWeeklyProfit.toLocaleString()}</span>
+              <span className="text-base sm:text-lg font-bold text-emerald-400 ml-0.5 whitespace-nowrap">원</span>
+            </div>
           </div>
-          <div className="flex items-baseline whitespace-nowrap text-2xl sm:text-3xl xl:text-4xl font-racing text-emerald-400 tracking-tight tabular-nums font-black">
-            <span>+{minWeeklyProfit.toLocaleString()}</span>
-            <span className="text-base font-normal text-emerald-500/80 ml-1 shrink-0">원</span>
-          </div>
-          <div className="text-xs text-slate-300 mt-2 whitespace-nowrap">
-            꾸준한 수익상 2차 평가 지표
+          <div className="text-xs text-slate-400 mt-2 break-keep-all leading-relaxed">
+            <span className="inline-block whitespace-nowrap">꾸준한 수익상</span>{' '}
+            <span className="inline-block whitespace-nowrap">2차 평가 지표</span>
           </div>
         </div>
 
         {/* Second Half Profit */}
-        <div className="bg-gradient-to-b from-[#13092b] to-[#0c061e] border border-purple-500/40 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between text-sm text-slate-300 font-semibold mb-2">
-            <span className="whitespace-nowrap">후반부 순수익금 (3~4주)</span>
-            <span className="text-xs text-sky-400 font-bold whitespace-nowrap">{CURRENT_USER.tradesCount}건 체결</span>
+        <div className="bg-gradient-to-b from-[#13092b] to-[#0c061e] border border-purple-500/40 rounded-2xl p-5 shadow-lg flex flex-col justify-between overflow-hidden">
+          <div>
+            <div className="flex items-center justify-between text-sm text-slate-300 font-semibold mb-2">
+              <span className="whitespace-nowrap">후반부 순수익금 (3~4주)</span>
+              <span className="text-xs text-sky-400 font-bold whitespace-nowrap">{CURRENT_USER.tradesCount}건 체결</span>
+            </div>
+            <div className="flex items-baseline text-2xl sm:text-2xl xl:text-3xl font-racing text-slate-100 tracking-tight font-black whitespace-nowrap">
+              <span>+{secondHalfProfit.toLocaleString()}</span>
+              <span className="text-base sm:text-lg font-bold text-slate-300 ml-0.5 whitespace-nowrap">원</span>
+            </div>
           </div>
-          <div className="flex items-baseline whitespace-nowrap text-2xl sm:text-3xl xl:text-4xl font-racing text-slate-100 tracking-tight font-black">
-            <span>+{secondHalfProfit.toLocaleString()}</span>
-            <span className="text-base font-normal text-slate-400 ml-1 shrink-0">원</span>
-          </div>
-          <div className="text-xs text-slate-400 mt-2 whitespace-nowrap">
-            전반부 72만원 대비 손익
+          <div className="text-xs text-slate-400 mt-2 break-keep-all leading-relaxed">
+            <span className="inline-block whitespace-nowrap">전반부 72만원</span>{' '}
+            <span className="inline-block whitespace-nowrap">대비 손익</span>
           </div>
         </div>
       </div>

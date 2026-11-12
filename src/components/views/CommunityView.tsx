@@ -248,7 +248,7 @@ export const CommunityView: React.FC = () => {
                   )}
 
                   <div className="flex-1 min-w-0">
-                    <h4 className={`text-base sm:text-lg font-bold transition-colors truncate ${
+                    <h4 className={`text-base sm:text-lg font-bold transition-colors break-keep-all leading-snug ${
                       isExpanded ? 'text-yellow-400' : 'text-white hover:text-yellow-300'
                     }`}>
                       {post.title}
